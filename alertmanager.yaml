@@ -1,0 +1,13 @@
+route:
+  group_by: ['alertname']
+  receiver: 'wechat'
+  repeat_interval: 60m
+
+receivers:
+- name: 'wechat'
+  wechat_configs:
+  - corp_id: ''
+    to_party: '2'
+    agent_id: '1'
+    api_secret: ''
+

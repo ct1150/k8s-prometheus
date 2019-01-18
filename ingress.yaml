@@ -1,0 +1,33 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  namespace: monitoring
+spec:
+  rules:
+  - host: prom.91ios.com
+    http:
+      paths:
+      - backend:
+          serviceName: prometheus-k8s
+          servicePort: 9090
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  namespace: monitoring
+spec:
+  rules:
+  - host: grafana.91ios.com
+    http:
+      paths:
+      - backend:
+          serviceName: grafana
+          servicePort: 3000
+
