@@ -6,8 +6,8 @@ route:
 receivers:
 - name: 'wechat'
   wechat_configs:
-  - corp_id: ''
+  - corp_id: 'your_corp_id'
     to_party: '2'
     agent_id: '1'
-    api_secret: ''
+    api_secret: 'your_api_secret'
 
